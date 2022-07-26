@@ -1,0 +1,7 @@
+USE THE FOLLOWING TEMPLATE TO ADD CONTAINER STYLED CONTENT SECTION
+
+<section class="page-section portfolio bg-primary">
+    <div class="container">
+        <!-- Content Here -->
+    </div>
+</section>

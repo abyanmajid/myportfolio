@@ -1,0 +1,684 @@
+{% extends 'main/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Home{% endblock %}
+
+
+{% block avatar %}
+<img
+  class="masthead-avatar mb-5"
+  src="../../static/main/assets/img/avatar.png"
+  alt="..."
+/>
+{% endblock %}
+
+{% block pagetitle %}Abyan Majid{% endblock %}
+{% block subtitle %}A Student and Python Developer{% endblock %}
+
+{% block content %}
+    <!-- Featured Work Section-->
+    <section class="page-section portfolio bg-primary" id="portfolio">
+      <div class="container">
+        <!-- Portfolio Section Heading-->
+        <h2
+          class="page-section-heading text-center text-uppercase text-secondary mb-0 text-white"
+        >
+          Featured Works
+        </h2>
+        <!-- Divider line -->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Portfolio Grid Items-->
+        <div class="row justify-content-center">
+          <!-- Portfolio Item 1-->
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div
+              class="portfolio-item mx-auto"
+              data-bs-toggle="modal"
+              data-bs-target="#portfolioModal1"
+            >
+              <div
+                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
+              >
+                <div
+                  class="portfolio-item-caption-content text-center text-white"
+                >
+                {{featuredwork1.title}}
+                </div>
+              </div>
+              {% if featuredwork1.featured_image_650x650 %}
+              <img
+              class="img-fluid"
+              src="{{ featuredwork1.featured_image_650x650.url }}"
+              alt="...">
+              {% else %}
+              <img
+                class="img-fluid"
+                src="../../static/main/assets/img/null_portfolio_image.jpg"
+                alt="...">
+              {% endif %}
+            </div>
+          </div>
+          <!-- Portfolio Item 2-->
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div
+              class="portfolio-item mx-auto"
+              data-bs-toggle="modal"
+              data-bs-target="#portfolioModal2"
+            >
+              <div
+                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
+              >
+                <div
+                  class="portfolio-item-caption-content text-center text-white"
+                >
+                {{featuredwork2.title}}
+                </div>
+              </div>
+              {% if featuredwork2.featured_image_650x650 %}
+              <img
+              class="img-fluid"
+              src="{{ featuredwork2.featured_image_650x650.url }}"
+              alt="...">
+              {% else %}
+              <img
+                class="img-fluid"
+                src="../../static/main/assets/img/null_portfolio_image.jpg"
+                alt="...">
+              {% endif %}
+            </div>
+          </div>
+          <!-- Portfolio Item 3-->
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div
+              class="portfolio-item mx-auto"
+              data-bs-toggle="modal"
+              data-bs-target="#portfolioModal3"
+            >
+              <div
+                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
+              >
+                <div
+                  class="portfolio-item-caption-content text-center text-white"
+                >
+                {{featuredwork3.title}}
+                </div>
+              </div>
+              {% if featuredwork3.featured_image_650x650 %}
+              <img
+              class="img-fluid"
+              src="{{ featuredwork3.featured_image_650x650.url }}"
+              alt="...">
+              {% else %}
+              <img
+                class="img-fluid"
+                src="../../static/main/assets/img/null_portfolio_image.jpg"
+                alt="...">
+              {% endif %}
+            </div>
+          </div>
+          <!-- Portfolio Item 4-->
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+            <div
+              class="portfolio-item mx-auto"
+              data-bs-toggle="modal"
+              data-bs-target="#portfolioModal4"
+            >
+              <div
+                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
+              >
+                <div
+                  class="portfolio-item-caption-content text-center text-white"
+                >
+                {{featuredwork4.title}}
+                </div>
+              </div>
+              {% if featuredwork4.featured_image_650x650 %}
+              <img
+              class="img-fluid"
+              src="{{ featuredwork4.featured_image_650x650.url }}"
+              alt="...">
+              {% else %}
+              <img
+                class="img-fluid"
+                src="../../static/main/assets/img/null_portfolio_image.jpg"
+                alt="...">
+              {% endif %}
+            </div>
+          </div>
+          <!-- Portfolio Item 5-->
+          <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
+            <div
+              class="portfolio-item mx-auto"
+              data-bs-toggle="modal"
+              data-bs-target="#portfolioModal5"
+            >
+              <div
+                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
+              >
+                <div
+                  class="portfolio-item-caption-content text-center text-white"
+                >
+                {{featuredwork5.title}}
+                </div>
+              </div>
+              {% if featuredwork5.featured_image_650x650 %}
+              <img
+              class="img-fluid"
+              src="{{ featuredwork5.featured_image_650x650.url }}"
+              alt="...">
+              {% else %}
+              <img
+                class="img-fluid"
+                src="../../static/main/assets/img/null_portfolio_image.jpg"
+                alt="...">
+              {% endif %}
+            </div>
+          </div>
+          <!-- Portfolio Item 6-->
+          <div class="col-md-6 col-lg-4">
+            <div
+              class="portfolio-item mx-auto"
+              data-bs-toggle="modal"
+              data-bs-target="#portfolioModal6"
+            >
+              <div
+                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
+              >
+                <div
+                  class="portfolio-item-caption-content text-center text-white"
+                >
+                {{featuredwork6.title}}
+                </div>
+              </div>
+              {% if featuredwork6.featured_image_650x650 %}
+              <img
+              class="img-fluid"
+              src="{{ featuredwork6.featured_image_650x650.url }}"
+              alt="...">
+              {% else %}
+              <img
+                class="img-fluid"
+                src="../../static/main/assets/img/null_portfolio_image.jpg"
+                alt="...">
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <!-- Divider Line -->
+          <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+          </div>
+        <!-- See All Work Button -->
+        <div class="text-center mt-4">
+          <a
+            class="btn btn-xl btn-outline-light"
+            href="{% url 'all_works' %}"
+          >
+            <i class="fa fa-eye" aria-hidden="true"></i>
+            &nbsp;See All Work
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- About Section-->
+    <section class="page-section bg-secondary text-white mb-0" id="about">
+      <div class="container text-center">
+        <!-- About Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-white">
+          About
+        </h2>
+        <!-- Divider line -->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- About Section Content-->
+        <p class="lead">
+          My name is Abyan Majid, I am a {{age}} years old student and developer from Indonesia.
+        </p>
+        <p class="lead">
+          Some of my interests include machine learning, game development, philosophy, writing fiction stories, and music. 
+          In this website, I store all of the projects I have completed ever since I started learning how to code.
+        </p>
+        <hr style="margin: 3rem 0 3rem">
+        <div class="row">
+          <div class="col-lg-6">
+            <h2 class="page-section-heading text-center text-uppercase text-white" style="font-size: 2rem">
+              Education
+            </h2>
+            <!-- Divider line -->
+            <div class="divider-custom" style="margin: 1rem 0 1rem">
+              <div class="divider-custom-line"></div>
+            </div>
+            {% for education in educations %}
+            <p class="lead">{{ education.education }}</p>
+            {% endfor %}
+
+            <div class="divider-custom"></div>
+
+          </div>
+
+          <div class="col-lg-6">
+            <h2 class="page-section-heading text-center text-uppercase text-white" style="font-size: 2rem">
+              Skills
+            </h2>
+            <!-- Divider line -->
+            <div class="divider-custom" style="margin: 1rem 0 1rem">
+              <div class="divider-custom-line"></div>
+            </div>
+            {% for skill in skills %}
+            <p class="lead">{{ skill.skill }}</p>
+            {% endfor %}
+
+            <div class="divider-custom"></div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section-->
+    <section class="page-section bg-primary" id="contact">
+      <div class="container">
+        <!-- Contact Section Heading-->
+        <h2
+          class="page-section-heading text-center text-uppercase text-secondary mb-0 text-white"
+        >
+          Contact Me
+        </h2>
+        <!-- Divider line -->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Contact Section Form-->
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-xl-7">
+            <!-- Insert form here -->
+            <form method="post" action="https://formsubmit.co/2ba71e57d2f75a7e713b91c64af62f9f" class="text-white" style="font-size: 1.25rem">
+              <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" name="name" class="form-control" placeholder="Name" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Email Address</label>
+                <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Subject</label>
+                <input type="text" name="_subject" class="form-control" placeholder="Subject" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Message</label>
+                <textarea type="text" name="message" class="form-control" placeholder="Write your message here!" rows="6" required></textarea>
+              </div>
+              <div class="text-center mt-4">
+                <button type="submit" value="submit" class="btn btn-lg btn btn-xl btn-outline-light" style="margin-top: 10px"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp; Submit</button>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Portfolio Modals-->
+    <!-- Portfolio Modal 1-->
+    <div
+      class="portfolio-modal modal fade"
+      id="portfolioModal1"
+      tabindex="-1"
+      aria-labelledby="portfolioModal1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button
+              class="btn-close"
+              type="button"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center pb-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Portfolio Modal - Title-->
+                  <h2
+                    class="portfolio-modal-title text-secondary text-uppercase mb-0"
+                  style="padding-bottom: 20px">
+                    {{ featuredwork1.title }}
+                  </h2>
+                  <h6>Developed by {{ featuredwork1.developer }}</h6>
+                  <!-- Divider line -->
+                  <hr>
+                  <!-- Portfolio Modal - Image-->
+                  {% if featuredwork1.featured_image_650x650 %}
+                  <img
+                  class="img-fluid"
+                  src="{{ featuredwork1.featured_image_650x650.url }}"
+                  alt="...">
+                  {% else %}
+                  <img
+                    class="img-fluid"
+                    src="../../static/main/assets/img/null_portfolio_image.jpg"
+                    alt="...">
+                  {% endif %}
+                  <!-- Divider line -->
+                  <hr>
+                  <!-- Portfolio Modal - Text-->
+                  <p class="mb-4">
+                    {{ featuredwork1.description }}
+                  </p>
+                  <button class="btn btn-primary" data-bs-dismiss="modal">
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                    &nbsp;Explore Work
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio Modal 2-->
+    <div
+      class="portfolio-modal modal fade"
+      id="portfolioModal2"
+      tabindex="-1"
+      aria-labelledby="portfolioModal2"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button
+              class="btn-close"
+              type="button"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center pb-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Portfolio Modal 2 - Title-->
+                  <h2
+                  class="portfolio-modal-title text-secondary text-uppercase mb-0"
+                style="padding-bottom: 20px">
+                  {{ featuredwork2.title }}
+                </h2>
+                <h6>Developed by {{ featuredwork2.developer }}</h6>
+                <!-- Divider line -->
+                <hr>
+                <!-- Portfolio Modal 2 - Image-->
+                {% if featuredwork2.featured_image_650x650 %}
+                <img
+                class="img-fluid"
+                src="{{ featuredwork2.featured_image_650x650.url }}"
+                alt="...">
+                {% else %}
+                <img
+                  class="img-fluid"
+                  src="../../static/main/assets/img/null_portfolio_image.jpg"
+                  alt="...">
+                {% endif %}
+                <!-- Divider line -->
+                <hr>
+                <!-- Portfolio Modal 2 - Text-->
+                <p class="mb-4">
+                  {{ featuredwork2.description }}
+                </p>
+                <button class="btn btn-primary" data-bs-dismiss="modal">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  &nbsp;Explore Work
+                </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio Modal 3-->
+    <div
+      class="portfolio-modal modal fade"
+      id="portfolioModal3"
+      tabindex="-1"
+      aria-labelledby="portfolioModal3"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button
+              class="btn-close"
+              type="button"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center pb-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Portfolio Modal 3 - Title-->
+                  <h2
+                  class="portfolio-modal-title text-secondary text-uppercase mb-0"
+                style="padding-bottom: 20px">
+                  {{ featuredwork3.title }}
+                </h2>
+                <h6>Developed by {{ featuredwork3.developer }}</h6>
+                <!-- Divider line -->
+                <hr>
+                <!-- Portfolio Modal 3 - Image-->
+                {% if featuredwork3.featured_image_650x650 %}
+                <img
+                class="img-fluid"
+                src="{{ featuredwork3.featured_image_650x650.url }}"
+                alt="...">
+                {% else %}
+                <img
+                  class="img-fluid"
+                  src="../../static/main/assets/img/null_portfolio_image.jpg"
+                  alt="...">
+                {% endif %}
+                <!-- Divider line -->
+                <hr>
+                <!-- Portfolio Modal 3 - Text-->
+                <p class="mb-4">
+                  {{ featuredwork3.description }}
+                </p>
+                <button class="btn btn-primary" data-bs-dismiss="modal">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  &nbsp;Explore Work
+                </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio Modal 4-->
+    <div
+      class="portfolio-modal modal fade"
+      id="portfolioModal4"
+      tabindex="-1"
+      aria-labelledby="portfolioModal4"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button
+              class="btn-close"
+              type="button"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center pb-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Portfolio Modal 4 - Title-->
+                  <h2
+                    class="portfolio-modal-title text-secondary text-uppercase mb-0"
+                  style="padding-bottom: 20px">
+                    {{ featuredwork4.title }}
+                  </h2>
+                  <h6>Developed by {{ featuredwork4.developer }}</h6>
+                  <!-- Divider line -->
+                  <hr>
+                  <!-- Portfolio Modal 4 - Image-->
+                  {% if featuredwork4.featured_image_650x650 %}
+                  <img
+                  class="img-fluid"
+                  src="{{ featuredwork4.featured_image_650x650.url }}"
+                  alt="...">
+                  {% else %}
+                  <img
+                    class="img-fluid"
+                    src="../../static/main/assets/img/null_portfolio_image.jpg"
+                    alt="...">
+                  {% endif %}
+                  <!-- Divider line -->
+                  <hr>
+                  <!-- Portfolio Modal 4 - Text-->
+                  <p class="mb-4">
+                    {{ featuredwork4.description }}
+                  </p>
+                  <button class="btn btn-primary" data-bs-dismiss="modal">
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                    &nbsp;Explore Work
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio Modal 5-->
+    <div
+      class="portfolio-modal modal fade"
+      id="portfolioModal5"
+      tabindex="-1"
+      aria-labelledby="portfolioModal5"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button
+              class="btn-close"
+              type="button"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center pb-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Portfolio Modal 5 - Title-->
+                  <h2
+                    class="portfolio-modal-title text-secondary text-uppercase mb-0"
+                  style="padding-bottom: 20px">
+                    {{ featuredwork5.title }}
+                  </h2>
+                  <h6>Developed by {{ featuredwork5.developer }}</h6>
+                  <!-- Divider line -->
+                  <hr>
+                  <!-- Portfolio Modal 5 - Image-->
+                  {% if featuredwork5.featured_image_650x650 %}
+                  <img
+                  class="img-fluid"
+                  src="{{ featuredwork5.featured_image_650x650.url }}"
+                  alt="...">
+                  {% else %}
+                  <img
+                    class="img-fluid"
+                    src="../../static/main/assets/img/null_portfolio_image.jpg"
+                    alt="...">
+                  {% endif %}
+                  <!-- Divider line -->
+                  <hr>
+                  <!-- Portfolio Modal 5 - Text-->
+                  <p class="mb-4">
+                    {{ featuredwork5.description }}
+                  </p>
+                  <button class="btn btn-primary" data-bs-dismiss="modal">
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                    &nbsp;Explore Work
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio Modal 6-->
+    <div
+      class="portfolio-modal modal fade"
+      id="portfolioModal6"
+      tabindex="-1"
+      aria-labelledby="portfolioModal6"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button
+              class="btn-close"
+              type="button"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center pb-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Portfolio Modal 6 - Title-->
+                  <h2
+                    class="portfolio-modal-title text-secondary text-uppercase mb-0"
+                  style="padding-bottom: 20px">
+                    {{ featuredwork6.title }}
+                  </h2>
+                  <h6>Developed by {{ featuredwork6.developer }}</h6>
+                  <!-- Divider line 6 -->
+                  <hr>
+                  <!-- Portfolio Modal 6 - Image-->
+                  {% if featuredwork6.featured_image_650x650 %}
+                  <img
+                  class="img-fluid"
+                  src="{{ featuredwork6.featured_image_650x650.url }}"
+                  alt="...">
+                  {% else %}
+                  <img
+                    class="img-fluid"
+                    src="../../static/main/assets/img/null_portfolio_image.jpg"
+                    alt="...">
+                  {% endif %}
+                  <!-- Divider line -->
+                  <hr>
+                  <!-- Portfolio Modal 6 - Text-->
+                  <p class="mb-4">
+                    {{ featuredwork6.description }}
+                  </p>
+                  <button class="btn btn-primary" data-bs-dismiss="modal">
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                    &nbsp;Explore Work
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

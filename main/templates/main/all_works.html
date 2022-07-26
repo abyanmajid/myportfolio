@@ -1,0 +1,105 @@
+{% extends 'main/base.html' %}
+
+{% block title %}All Works{% endblock %}
+
+{% block pagelinks %}
+<li class="nav-item mx-0 mx-lg-1">
+    <a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'home' %}">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Return to Home
+    </a>
+{% endblock %}
+
+{% block pagetitle %}All Works{% endblock %}
+{% block subtitle %}List of All Projects I Have Done{% endblock %}
+
+{% block content %}
+<style>
+    th, td, table {
+        color: white;
+    }
+    .table > :not(caption) > * > * {
+        background-color: #232931;
+    }
+    td {
+      vertical-align: middle;
+    }
+    .btn-xl {
+      padding: 0.5rem;
+      font-size: inherit;
+    }
+</style>
+
+<section class="page-section portfolio bg-primary">
+    <div class="container">
+        <!-- Content Here -->
+        <div class="row">
+            <div class="col-lg-6">
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0 text-white">
+                    Professional
+                </h2>
+                <p class="masthead-subheading font-weight-light mb-0 text-white text-center" style="padding-top: 20px">
+                    Projects done for clients
+                </p>
+                <!-- Divider Line -->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                </div>
+                <table class="table table-hover table-dark">
+                    <thead>
+                      <tr>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Release Date</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for project in professional %}
+                      <tr>
+                        <td>{{ project.title }}</td>
+                        <td>{{ project.category }}</td>
+                        <td>{{ project.release_date }}</td>
+                        <td><a class="btn btn-xl btn-outline-light"  href="{{ project.id }}">
+                          <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;View
+                        </a></td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+            </div>
+            <div class="col-lg-6">
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0 text-white">
+                    Side Projects
+                </h2>
+                <p class="masthead-subheading font-weight-light mb-0 text-white text-center" style="padding-top: 20px">
+                    Projects done out of personal interest
+                </p>
+                <!-- Divider Line -->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                </div>
+                <table class="table table-hover table-dark">
+                    <thead>
+                      <tr>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Release Date</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for project in sideprojects %}
+                      <tr>
+                        <td>{{ project.title }}</td>
+                        <td>{{ project.category }}</td>
+                        <td>{{ project.release_date }}</td>
+                        <td><a class="btn btn-xl btn-outline-light"  href="{{ project.id }}">
+                          <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;View
+                        </a></td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+            </div>
+    </div>
+</section>
+{% endblock %}
