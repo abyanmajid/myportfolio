@@ -1,2 +1,3 @@
-release: python manage.py migrate 
-web: gunicorn myportfolio.wsgi --log-file=-
+web: gunicorn myportfolio.wsgi:application --log-file - --log-level debug
+python manage.py collectstatic --noinput
+manage.py migrate
