@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 from dotenv import load_dotenv
-import django_heroku
 import os
 
 # Load Env
@@ -148,5 +147,3 @@ SECURE_HSTS_PRELOAD = True
 
 # Secure Referrer Policy
 SECURE_REFERRER_POLICY = 'strict-origin'
-
-django_heroku.settings(locals())
