@@ -1,3 +1,3 @@
-web: gunicorn myportfolio.wsgi
+web: gunicorn myportfolio.wsgi --log-file -
 python manage.py collectstatic --noinput
 manage.py migrate

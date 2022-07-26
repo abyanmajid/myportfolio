@@ -120,7 +120,6 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-django_heroku.settings(locals())
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
@@ -149,3 +148,5 @@ SECURE_HSTS_PRELOAD = True
 
 # Secure Referrer Policy
 SECURE_REFERRER_POLICY = 'strict-origin'
+
+django_heroku.settings(locals())
